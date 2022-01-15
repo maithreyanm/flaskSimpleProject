@@ -2,7 +2,6 @@ from sqlalchemy import create_engine
 
 from sqlalchemy import orm, MetaData
 from config import Config
-from app.models.models import base
 
 
 class SQLAConfig:
@@ -16,4 +15,5 @@ class SQLAConfig:
         metadata = MetaData()
         Session = orm.sessionmaker(bind=engine)
         cls.session = Session()
+        from app.models.models import base
         base.metadata.create_all(bind=engine)
