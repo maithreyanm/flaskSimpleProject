@@ -1,9 +1,9 @@
 ENVIRONMENT=DEV
-
-DEV_DB_NAME=
-DEV_DB_PASS=
-DEV_DB_HOST=
-DEV_DB_USER=
+FLASK_APP=main.py
+DEV_DB_NAME=flask_project
+DEV_DB_PASS=password
+DEV_DB_HOST=localhost
+DEV_DB_USER=root
 
 QA_DB_NAME=
 QA_DB_PASS=
