@@ -16,11 +16,10 @@ class ORMQueries:
 
     @classmethod
     def pandas_df_sql(cls, name_list):
-        '''using pandas to load data into df and straight to sql
-        need to check why not working if table already exists'''
+        '''using pandas to load data into df and straight to sql'''
         data = {
             User.name:name_list
         }
         df = pd.DataFrame(data)
-        df.to_sql('User', sqla.engine)
+        df.to_sql('User', sqla.engine, if_exists='append')
 
