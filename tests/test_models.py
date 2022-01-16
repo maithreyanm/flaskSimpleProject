@@ -56,3 +56,10 @@ class TestModel(Base):
         adm.user_id = usr.id
         adm.save_me()
 
+    def test_pds(self):
+        name_list = []
+        for i in range(0,10):
+            fake = Faker()
+            fake_name = fake.name()
+            name_list.append(fake_name)
+        resp = ORMQueries.pandas_df_sql(name_list)
