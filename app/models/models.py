@@ -105,6 +105,16 @@ class BaseModel(base):
             sqla.session.rollback()
             raise e
 
+    @classmethod
+    def get_all(cls):
+        try:
+            query = sqla.session.query(cls)
+            return query.all()
+        except Exception as e:
+            sqla.session.rollback()
+            raise e
+
+
 
 class User(BaseModel):
     __tablename__ = 'User'
